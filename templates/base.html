@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normograma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Altura completa del viewport */
+            background-color: #f4f4f4;
+        }
+        .header {
+            flex-shrink: 0; /* Fija el tamaño del encabezado */
+            width: 100%;
+            background-color: #004080;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            position: fixed; /* Hace que el encabezado sea fijo */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Asegura que el encabezado esté siempre visible */
+        }
+        .header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .footer {
+            flex-shrink: 0; /* Fija el tamaño del pie */
+            width: 99%;
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed; /* Hace que el pie sea fijo */
+            bottom: 0;
+            left: 0;
+            z-index: 1000; /* Asegura que el pie esté siempre visible */
+            border-top: 1px solid #ddd;
+        }
+        .container {
+            flex: 1; /* Permite que el contenido ocupe el espacio restante */
+            display: flex; /* Distribución de barra lateral y contenido */
+            flex-direction: row;
+            width: 85%; /* Limitar el ancho al 85% */
+            max-width: 1200px;
+            margin: 90px auto 50px auto; /* Ajusta para el espacio del encabezado y pie */
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .sidebar-container {
+            width: 30%;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            overflow-y: hidden;
+        }
+        .searchbox-container {
+            flex-shrink: 0; /* Evita que se redimensione */
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .index-title-container {
+            flex-shrink: 0; /* Evita que el contenedor cambie de tamaño */
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .index-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .index-container {
+            flex: 1; /* Hace que el índice ocupe el espacio restante */
+            overflow-y: auto; /* Habilita el desplazamiento */
+            padding: 10px;
+        }
+        .index-container li {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow-wrap: break-word; /* Habilita el ajuste de texto */
+            word-wrap: break-word; /* Compatibilidad adicional */
+            white-space: normal; /* Asegura que el texto se ajuste a múltiples líneas */
+        }
+        .index-container li a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 12px;
+        }
+        .content {
+            width: 70%;
+            padding: 20px;
+            overflow-y: auto; /* Scroll para el contenido principal */
+        }
+        .footer img {
+            height: 40px; /* Tamaño de los iconos */
+            vertical-align: middle;
+        }
+        .footer-text {
+            flex-grow: 1; /* Ocupa el espacio restante entre los iconos */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the Header -->
+    <div class="header">
+        <a href="/">
+            <img src="{% static 'img/law.png' %}" alt="Logo Inicio">
+        </a>
+        <span>
+            {% include 'header.html' %}
+        </span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar Container -->
+        <div class="sidebar-container">
+            <!-- Searchbox Container -->
+            <div class="searchbox-container">
+                {% include 'searchbox.html' %}
+            </div>
+            <!-- Index Title Container -->
+            <div class="index-title-container">
+                <p class="index-title">Índice</p>
+            </div>
+            <!-- Index Container -->
+            <div class="index-container">
+                {% include 'index.html' %}
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="content">
+            {% include 'content.html' %}
+        </div>
+    </div>
+    
+    <!-- Include the Footer -->
+    <div class="footer">
+        <img src="{% static 'img/avancejuridico.png' %}" alt="Avance Jurídico Logo" />
+        <span class="footer-text">
+            {% include 'footer.html' %}
+        </span>
+        <img src="{% static 'img/gov.png' %}" alt="Gov Logo" />
+    </div>
+</body>
+</html>

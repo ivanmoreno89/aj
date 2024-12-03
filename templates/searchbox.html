@@ -1,0 +1,32 @@
+<div class="search-box-container" style="padding: 10px; display: flex; align-items: center; justify-content: space-between;">
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="Buscar..."
+        style="width: 85%; padding: 8px; font-size: 12px; border: 1px solid #ccc; border-radius: 4px;"
+        onkeyup="filterIndex()"
+    />
+    <button
+        onclick="clearSearchBox()"
+        style="margin-left: 10px; padding: 8px; font-size: 12px; background-color: #004080; color: white; border: none; border-radius: 4px; cursor: pointer;"
+    >
+        Borrar
+    </button>
+</div>
+
+<script>
+    function filterIndex() {
+        const query = document.getElementById('searchBox').value.toLowerCase();
+        const items = document.getElementById('indexList').getElementsByTagName('li');
+        for (let i = 0; i < items.length; i++) {
+            const text = items[i].textContent || items[i].innerText;
+            items[i].style.display = text.toLowerCase().includes(query) ? "" : "none";
+        }
+    }
+
+    function clearSearchBox() {
+        const searchBox = document.getElementById('searchBox');
+        searchBox.value = ""; // Limpiar la casilla de búsqueda
+        filterIndex(); // Reiniciar la lista del índice
+    }
+</script>

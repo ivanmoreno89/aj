@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .header {
+            background-color: #004080; /* Color azul oscuro */
+            color: white; /* Texto en blanco */
+            padding: 15px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            border-bottom: 2px solid #ddd;
+            text-transform: uppercase; /* Convertir texto a mayúsculas */
+            display: flex;
+            align-items: center; /* Centrar verticalmente */
+            justify-content: space-between; /* Espaciado entre icono y texto */
+        }
+        .header img {
+            height: 60px; /* Tamaño del icono */
+            margin-right: 10px; /* Separación entre el icono y el texto */
+        }
+        .header-text {
+            flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+            text-align: center; /* Centrar el texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <!-- Icono que lleva a la visualización inicial -->
+        <a href="/">
+            <img src="{% static 'img/law.png' %}" alt="Logo Inicio" />
+        </a>
+        <div class="header-text">
+            Prueba Técnica Avance Jurídico S.A.S.
+        </div>
+    </div>
+</body>
+</html>
