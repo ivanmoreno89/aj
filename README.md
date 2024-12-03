@@ -1,4 +1,5 @@
-# Prueba Técnica - Avance Jurídico S.A.S.
+
+# Prueba Técnica - Avance Jurídico S.A.S
 
 Este proyecto es una prueba técnica desarrollada con Django. El objetivo es demostrar habilidades de desarrollo en backend, frontend y manipulación de datos estructurados y multimedia.
 
@@ -48,20 +49,22 @@ aj/                         # Carpeta raíz del proyecto
 │   └── ...
 ├── manage.py               # Script de gestión de Django
 └── db.sqlite3              # Base de datos SQLite
+```
 
 ## Próximas Mejoras
+
 Estas son algunas posibles ideas para extender y mejorar el proyecto orientadas a agregar funcionalidad, optimización y usabilidad:
 
-1. Exportación de Datos:
-Permitir la exportación de bloques y comentarios a formatos como PDF.
-Añadir botones en la interfaz para descargar un bloque del documento.
+1. **Exportación de Datos**:
+   - Permitir la exportación de bloques y comentarios a formatos como PDF.
+   - Añadir botones en la interfaz para descargar un bloque del documento.
 
-2. Optimización del Rendimiento:
-Revisar y optimizar consultas a la base de datos.
+2. **Optimización del Rendimiento**:
+   - Revisar y optimizar consultas a la base de datos.
 
-3. Diseño Responsivo Mejorado:
-Ajustar la interfaz para dispositivos móviles y tabletas.
-Asegurar que todas las funcionalidades sean accesibles en pantallas pequeñas.
+3. **Diseño Responsivo Mejorado**:
+   - Ajustar la interfaz para dispositivos móviles y tabletas.
+   - Asegurar que todas las funcionalidades sean accesibles en pantallas pequeñas.
 
-4. Integración con APIs Externas:
-Permitir importar datos desde APIs externas o integrar servicios como Google Drive para cargar archivos.
+4. **Integración con APIs Externas**:
+   - Permitir importar datos desde APIs externas o integrar servicios como Google Drive para cargar archivos.
