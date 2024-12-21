@@ -68,3 +68,11 @@ Estas son algunas posibles ideas para extender y mejorar el proyecto orientadas 
 
 4. **Integración con APIs Externas**:
    - Permitir importar datos desde APIs externas o integrar servicios como Google Drive para cargar archivos.
+
+## Capturas de pantalla
+
+![alt text](imagen1.jpg)
+
+![alt text](imagen2.jpg)
+
+![alt text](imagen3.jpg)
